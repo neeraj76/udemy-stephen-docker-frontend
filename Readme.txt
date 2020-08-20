@@ -23,6 +23,10 @@ The code will now look like this:
 access_key_id: $AWS_ACCESS_KEY
 secret_access_key: $AWS_SECRET_KEY
 
-# Aws Generate Keys
+# Aws Generate API Keys from IAM
 IAM:
-i) Users
+i) Users: Add User
+User:
+docker-react-travis-ci
+
+# We use a feature environment secret used by travis-CI to provide the keys
