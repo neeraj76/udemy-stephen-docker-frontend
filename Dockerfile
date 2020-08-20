@@ -15,6 +15,8 @@ RUN npm run build
 # Just putting a FROM statement mean that new phase has started
 # Run Phase
 FROM nginx
+# Required for AWS Elastic Beanstalk
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 
 # We don't need start command
