@@ -2,7 +2,7 @@
 # We are only going to use build directory in the next phase
 
 # Build Phase
-FROM node:alpine as builder
+FROM node:alpine
 WORKDIR '/app'
 COPY package.json .
 RUN npm install
@@ -17,7 +17,7 @@ RUN npm run build
 FROM nginx
 # Required for AWS Elastic Beanstalk
 EXPOSE 80
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=0 /app/build /usr/share/nginx/html
 
 # We don't need start command
 # The default start command of the nginx container starts nginx
