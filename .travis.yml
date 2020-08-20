@@ -8,4 +8,4 @@ before_install:
 
 # All commands to run test suite
 script:
-  - docker run neeraj76/frontend npm run test -- --coverage
+  - docker run -e CI=true USERNAME/docker-react npm run test
