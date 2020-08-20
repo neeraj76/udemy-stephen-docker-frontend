@@ -1,0 +1,11 @@
+sudo: required
+services:
+  - docker
+
+# Before we run the tests
+before_install:
+  - docker build -t neeraj76/frontend -f Dockerfile.dev .
+
+# All commands to run test suite
+script:
+  - docker run neeraj76/frontend npm run test -- --coverage
