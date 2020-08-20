@@ -9,3 +9,13 @@ before_install:
 # All commands to run test suite
 script:
   - docker run -e CI=true neeraj76/frontend npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-frontend"
+  env: "DockerFrontend-env"
+  bucket: "elasticbeanstalk-us-east-2-764022628003"
+  bucket_path: "docker-frontend"
+  on:
+    branch: master

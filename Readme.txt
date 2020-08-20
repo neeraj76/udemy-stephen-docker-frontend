@@ -17,3 +17,12 @@ instead should be:
 
 script:
   - docker run -e CI=true USERNAME/docker-react npm run test
+
+The code will now look like this:
+
+access_key_id: $AWS_ACCESS_KEY
+secret_access_key: $AWS_SECRET_KEY
+
+# Aws Generate Keys
+IAM:
+i) Users
